@@ -35,7 +35,7 @@ namespace AdventureWorksAPI.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("product")]
-        public async Task<IActionResult> GetProductsAsync(int? pageSize, int? pageNumber, string name = null)
+        public async Task<IActionResult> GetProductsAsync(int? pageSize = null, int? pageNumber = null, string name = null)
         {
             var products = new ListModelResponse<ProductViewModel>();
 

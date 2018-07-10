@@ -7,10 +7,12 @@ namespace AdventureWorksAPI.Storage
     public class AdventureWorksDbContext : DbContext
     {
         public string ConnectionString { get; set; }
+        public IEntityMapper EntityMapper { get; }
 
-        public AdventureWorksDbContext(IOptions<AppSettings> appSettings) 
+        public AdventureWorksDbContext(IOptions<AppSettings> appSettings, IEntityMapper entityMapper) 
         {
             ConnectionString = appSettings.Value.ConnectionString;
+            EntityMapper = entityMapper;
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -22,7 +24,7 @@ namespace AdventureWorksAPI.Storage
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.MapProduct();
+            EntityMapper.MapEntities(modelBuilder); 
 
             base.OnModelCreating(modelBuilder);
         }
