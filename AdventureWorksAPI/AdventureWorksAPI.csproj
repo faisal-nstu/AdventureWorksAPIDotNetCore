@@ -5,6 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Extensions\" />
+    <Folder Include="Responses\" />
+    <Folder Include="ViewModels\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
