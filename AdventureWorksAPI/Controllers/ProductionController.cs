@@ -3,6 +3,7 @@ using AdventureWorksAPI.Models;
 using AdventureWorksAPI.Responses;
 using AdventureWorksAPI.Storage;
 using AdventureWorksAPI.ViewModels;
+using Contracts;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -15,12 +16,19 @@ namespace AdventureWorksAPI.Controllers
     public class ProductionController : Controller
     {
         private IAdventureWorksRepository AdventureWorksRepository;
-        
-        public ProductionController(IAdventureWorksRepository adventureWorksRepository)
+        private ILoggerManager _logger;
+
+        //public ProductionController(IAdventureWorksRepository adventureWorksRepository) : this(adventureWorksRepository, null)
+        //{
+
+        //}
+
+        public ProductionController(IAdventureWorksRepository adventureWorksRepository, ILoggerManager logger)
         {
             AdventureWorksRepository = adventureWorksRepository;
+            _logger = logger;
         }
-
+        
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -47,11 +55,13 @@ namespace AdventureWorksAPI.Controllers
                 products.Model = response.Model.Select(item => item.ToViewModel()).ToList();
                 products.TotalCount = response.TotalCount;
                 products.Message = string.Format($"Showing {response.Model?.Count()} of total {response.TotalCount} items.");
+                _logger?.LogInfo("Products: "+products.Message);
             }
             catch (Exception ex)
             {
                 products.DidError = true;
                 products.ErrorMessage = ex.Message;
+                _logger.LogError(ex.Message);
             }
 
             return products.ToHttpResponse();
@@ -78,6 +88,7 @@ namespace AdventureWorksAPI.Controllers
             {
                 response.DidError = true;
                 response.ErrorMessage = ex.Message;
+                _logger.LogError(ex.Message);
             }
 
             return response.ToHttpResponse();
@@ -105,6 +116,7 @@ namespace AdventureWorksAPI.Controllers
             {
                 response.DidError = true;
                 response.ErrorMessage = ex.ToString();
+                _logger.LogError(ex.Message);
             }
 
             return response.ToHttpResponse();
@@ -133,6 +145,7 @@ namespace AdventureWorksAPI.Controllers
             {
                 response.DidError = true;
                 response.ErrorMessage = ex.Message;
+                _logger.LogError(ex.Message);
             }
 
             return response.ToHttpResponse();
@@ -160,6 +173,7 @@ namespace AdventureWorksAPI.Controllers
             {
                 response.DidError = true;
                 response.ErrorMessage = ex.Message;
+                _logger.LogError(ex.Message);
             }
 
             return response.ToHttpResponse();

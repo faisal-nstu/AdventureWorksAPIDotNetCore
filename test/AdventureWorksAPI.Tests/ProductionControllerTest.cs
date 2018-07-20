@@ -15,7 +15,7 @@ namespace AdventureWorksAPI.Tests
         {
             // Arrange
             var repository = RepositoryMocker.GetAdventureWorksRepository();
-            var controller = new ProductionController(repository);
+            var controller = new ProductionController(repository, null);
 
             // Act
             var response = await controller.GetProductsAsync() as ObjectResult;
@@ -32,7 +32,7 @@ namespace AdventureWorksAPI.Tests
         {
             // Arrange
             var repository = RepositoryMocker.GetAdventureWorksRepository();
-            var controller = new ProductionController(repository);
+            var controller = new ProductionController(repository, null);
             var id = 1;
 
             // Act
@@ -50,7 +50,7 @@ namespace AdventureWorksAPI.Tests
         {
             // Arrange
             var repository = RepositoryMocker.GetAdventureWorksRepository();
-            var controller = new ProductionController(repository);
+            var controller = new ProductionController(repository, null);
             var id = 0;
 
             // Act
@@ -68,7 +68,7 @@ namespace AdventureWorksAPI.Tests
         {
             // Arrange
             var repository = RepositoryMocker.GetAdventureWorksRepository();
-            var controller = new ProductionController(repository);
+            var controller = new ProductionController(repository, null);
             var request = new ProductViewModel
             {
                 ProductName = String.Format("New test product {0}{1}{2}", DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Millisecond),
@@ -90,7 +90,7 @@ namespace AdventureWorksAPI.Tests
         {
             // Arrange
             var repository = RepositoryMocker.GetAdventureWorksRepository();
-            var controller = new ProductionController(repository);
+            var controller = new ProductionController(repository, null);
             var id = 1;
             var request = new ProductViewModel
             {
@@ -114,7 +114,7 @@ namespace AdventureWorksAPI.Tests
         {
             // Arrange
             var repository = RepositoryMocker.GetAdventureWorksRepository();
-            var controller = new ProductionController(repository);
+            var controller = new ProductionController(repository, null);
             var id = 1000;
 
             // Act

@@ -12,6 +12,10 @@ using Newtonsoft.Json.Serialization;
 using AdventureWorksAPI.Storage;
 using AdventureWorksAPI.Models;
 using Swashbuckle.AspNetCore.Swagger;
+using NLog;
+using System.IO;
+using Contracts;
+using LoggerService;
 
 namespace AdventureWorksAPI
 {
@@ -25,6 +29,8 @@ namespace AdventureWorksAPI
                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                .AddEnvironmentVariables();
 
+            LogManager.LoadConfiguration(String.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
+
             Configuration = builder.Build();
         }
 
@@ -33,6 +39,8 @@ namespace AdventureWorksAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<ILoggerManager, LoggerManager>();
+
             // add framework services
             services.AddMvc().AddJsonOptions(a => a.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver());
 

@@ -1,0 +1,33 @@
+2018-07-20 19:43:18.6800 INFO Here is info message from our values controller.
+2018-07-20 19:43:18.7695 DEBUG Here is debug message from our values controller.
+2018-07-20 19:43:18.7695 WARN Here is warn message from our values controller.
+2018-07-20 19:43:18.7695 ERROR Here is error message from our values controller.
+2018-07-20 19:58:34.5002 INFO Here is info message from our values controller.
+2018-07-20 19:58:34.6182 DEBUG Here is debug message from our values controller.
+2018-07-20 19:58:34.6182 WARN Here is warn message from our values controller.
+2018-07-20 19:58:34.6182 ERROR Here is error message from our values controller.
+2018-07-20 20:01:09.4877 INFO Here is info message from our values controller.
+2018-07-20 20:01:09.5650 DEBUG Here is debug message from our values controller.
+2018-07-20 20:01:09.5650 WARN Here is warn message from our values controller.
+2018-07-20 20:01:09.5650 ERROR Here is error message from our values controller.
+2018-07-20 20:01:26.3207 INFO Products: Showing 10 of total 509 items.
+2018-07-20 20:02:04.4530 INFO Products: Showing 10 of total 509 items.
+2018-07-20 20:02:20.6974 INFO Products: Showing 100 of total 509 items.
+2018-07-20 20:10:21.2972 INFO Here is info message from our values controller.
+2018-07-20 20:10:21.3991 DEBUG Here is debug message from our values controller.
+2018-07-20 20:10:21.3991 WARN Here is warn message from our values controller.
+2018-07-20 20:10:21.4192 ERROR Here is error message from our values controller.
+2018-07-20 20:12:26.8777 INFO Here is info message from our values controller.
+2018-07-20 20:12:27.0046 DEBUG Here is debug message from our values controller.
+2018-07-20 20:12:27.0046 WARN Here is warn message from our values controller.
+2018-07-20 20:12:27.0046 ERROR Here is error message from our values controller.
+2018-07-20 20:16:43.1493 INFO Here is info message from our values controller.
+2018-07-20 20:16:43.2635 DEBUG Here is debug message from our values controller.
+2018-07-20 20:16:43.2917 WARN Here is warn message from our values controller.
+2018-07-20 20:16:43.2917 ERROR Here is error message from our values controller.
+2018-07-20 20:16:49.8876 INFO Products: Showing 99 of total 511 items.
+2018-07-20 20:17:02.8398 INFO Products: Showing 12 of total 511 items.
+2018-07-20 21:15:40.7843 INFO Here is info message from our values controller.
+2018-07-20 21:15:40.9138 DEBUG Here is debug message from our values controller.
+2018-07-20 21:15:40.9138 WARN Here is warn message from our values controller.
+2018-07-20 21:15:40.9138 ERROR Here is error message from our values controller.
