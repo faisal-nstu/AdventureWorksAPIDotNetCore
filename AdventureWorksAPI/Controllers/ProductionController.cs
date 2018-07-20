@@ -17,12 +17,7 @@ namespace AdventureWorksAPI.Controllers
     {
         private IAdventureWorksRepository AdventureWorksRepository;
         private ILoggerManager _logger;
-
-        //public ProductionController(IAdventureWorksRepository adventureWorksRepository) : this(adventureWorksRepository, null)
-        //{
-
-        //}
-
+        
         public ProductionController(IAdventureWorksRepository adventureWorksRepository, ILoggerManager logger)
         {
             AdventureWorksRepository = adventureWorksRepository;
